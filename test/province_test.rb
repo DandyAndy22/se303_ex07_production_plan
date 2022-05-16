@@ -43,4 +43,20 @@ class ProvinceTest < Minitest::Test
     assert_equal(-26, asia.shortfall)
     assert_equal(-10, asia.profit)
   end
+
+  def test_province_empty_string_demand
+    asia.demand = ""
+    no_method_error_output_shortfall = "\# encoding: US-ASCII\n" + "\#    valid: true\n" + "undefined method `-' for \"\":String\n" + "Did you mean?  -@"
+    error = assert_raises(NoMethodError) do 
+      asia.shortfall
+    end
+    no_method_error_output_profit = "\# encoding: US-ASCII\n" + "\#    valid: true\n" + "undefined method `-' for \"\":String\n" + "Did you mean?  -@"
+    error = assert_raises(NoMethodError) do 
+      asia.shortfall
+    end
+    # assert_equal(no_method_error_output_shortfall, error.message)
+    # assert_equal(no_method_error_output_profit, error.message)
+  end
+
+  
 end
