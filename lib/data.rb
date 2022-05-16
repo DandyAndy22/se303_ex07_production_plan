@@ -13,7 +13,7 @@ def sample_province_data
   }
 end
 
-def sample_provice_no_producers
+def sample_province_no_producers
   {
     name: 'No producers',
     producers: [],

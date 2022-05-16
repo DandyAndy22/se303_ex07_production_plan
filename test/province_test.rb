@@ -8,9 +8,14 @@ class ProvinceTest < Minitest::Test
   extend Minitest::Spec::DSL
 
   let(:asia) { Province.new(sample_province_data) }
+  let(:no_producers) { Province.new(sample_province_no_producers) }
 
   def test_province_shortfall
     assert_equal(5, asia.shortfall)
+  end
+
+  def test_province_no_producers_shortfall
+    assert_equal(30, no_producers.shortfall)
   end
 
   def test_province_profit
@@ -22,6 +27,4 @@ class ProvinceTest < Minitest::Test
     assert_equal(-6, asia.shortfall)
     assert_equal(292, asia.profit)
   end
-
-
 end
