@@ -9,6 +9,7 @@ class ProvinceTest < Minitest::Test
 
   let(:asia) { Province.new(sample_province_data) }
   let(:no_producers) { Province.new(sample_province_no_producers) }
+  let(:string_for_producers) { Province.new(sample_province_string_producers) }
 
   def test_province_shortfall
     assert_equal(5, asia.shortfall)
@@ -58,5 +59,8 @@ class ProvinceTest < Minitest::Test
     # assert_equal(no_method_error_output_profit, error.message)
   end
 
-  
+  # Producers cannot accomodate a string
+  # def test_province_string_for_producers
+  #   assert_equal(0, string_for_producers.shortfall)
+  # end  
 end
